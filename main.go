@@ -17,7 +17,7 @@ func fetchWebsitesConcurrently(websites []Website) map[string]string {
 	for _, w := range websites {
 		wg.Add(1)
 		go func(website Website) {
-			log.Printf("Handing %s", website.URL)
+			log.Printf("Handling %s", website.URL)
 			defer wg.Done()
 			content, err := FetchWebsite(website)
 			if err == nil {
